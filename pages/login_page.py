@@ -1,7 +1,7 @@
-
+from locators.login_page_locators import LoginPageLocators
 from pages.base_page import BasePage
 from pages.data import LoginPageData
-from pages.locators import LoginPageLocators
+
 
 
 class LoginPage(BasePage):

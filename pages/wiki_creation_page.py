@@ -1,9 +1,7 @@
-import time
-
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
+
+from locators.wiki_creation_page_locators import WikiCreationPageLocators
 from pages.base_page import BasePage
-from pages.locators import WikiCreationPageLocators
 
 
 class WikiCreationPage(BasePage):
@@ -32,46 +30,13 @@ class WikiCreationPage(BasePage):
         category_field.send_keys(Keys.ENTER)
 
     def add_button(self):
-        # add_button = self.browser.find_element(*WikiCreationPageLocators.ADD_BUTTON)
-        # add_button.click()
-        add_button2 = self.browser.find_element(*WikiCreationPageLocators.ADD_BUTTON2)
-        add_button2.click()
+        add_button = self.browser.find_element(*WikiCreationPageLocators.ADD_BUTTON)
+        add_button.click()
 
     def edit_button(self):
         edit_button = self.browser.find_element(*WikiCreationPageLocators.EDIT_BUTTON)
         edit_button.submit()
 
-
-
-    # def click_logo_icon(self):
-    #     self.click_element(WikiCreationPageLocators.LOGO_ICON)
-    #
-    # def enter_title(self, title):
-    #     self.enter_text(WikiCreationPageLocators.TITLE_FIELD, title)
-    #
-    # def enter_description(self, description):
-    #     self.enter_text(WikiCreationPageLocators.DESCRIPTION_FIELD, description)
-    #
-    # def enter_category(self, category):
-    #     self.enter_text(WikiCreationPageLocators.CATEGORY_FIELD, category)
-    #
-    # def click_add_button(self):
-    #     self.click_element(WikiCreationPageLocators.ADD_BUTTON)
-    #
-    # def click_edit_button(self):
-    #     self.click_element(WikiCreationPageLocators.EDIT_BUTTON)
-    #
-    # def click_section_list_button(self):
-    #     self.click_element(WikiCreationPageLocators.SECTION_LIST_BUTTON)
-    #
-    # def create_wiki_space(self, title, description, category):
-    #     self.click_create_button()
-    #     self.click_logo_icon()
-    #     self.enter_title(title)
-    #     self.enter_description(description)
-    #     self.enter_category(category)
-    #     self.click_add_button()
-    #     self.click_add_button()
-    #     self.click_edit_button()
-    #     self.click_section_list_button()
-    #     self.wait_for_element_visibility(WikiCreationPageLocators.SUCCESS_MESSAGE)
+    def chapters_button(self):
+        chapters_button = self.browser.find_element(*WikiCreationPageLocators.CHAPTERS_BUTTON)
+        chapters_button.click()
